@@ -14,8 +14,14 @@ html, body {
   width: 500px;
   gap: 10px;
 }
-.card {
+.swords-card, .cups-card, .coins-card, .clubs-card {
   height: 100px;
-  width: 50px;
+  width: 80px;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.coins-card {
+  background-color: yellow;
 }

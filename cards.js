@@ -18,9 +18,23 @@ function printCards() {
 
   for (let singleCard of createDeck()) {
     const card = document.createElement("div");
-    card.classList.add("card");
 
-    card.textContent = singleCard.value + singleCard.suit;
+
+    if (singleCard.suit == "swords") {
+      card.classList.add("swords-card")
+    }
+    else if (singleCard.suit == "cups") {
+      card.classList.add("cups-card")
+    }
+    else if (singleCard.suit == "coins") {
+      card.classList.add("coins-card")
+    }
+    else if (singleCard.suit == "clubs") {
+      card.classList.add("clubs-card")
+    }
+
+
+    card.textContent = singleCard.value + ' ' + singleCard.suit;
     console.log(singleCard);
     container.appendChild(card);
   }
