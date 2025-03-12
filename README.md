@@ -1,2 +1,2 @@
 # Scopa
-Scopa card game built in the browser
+Scopa card game built for the browser
