@@ -3,7 +3,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .card-container {
@@ -24,4 +23,16 @@ html, body {
 
 .coins-card {
   background-color: yellow;
+}
+
+.swords-card {
+  background-color: blue;
+}
+
+.cups-card {
+  background-color: red;
+}
+
+.clubs-card {
+  background-color: grey;
 }
