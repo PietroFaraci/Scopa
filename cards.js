@@ -45,20 +45,31 @@ function shuffle(deck) {
   return deck;
 }
 
-let mainDeck = createDeck();
-printCards(shuffle(mainDeck));
+let shuffledDeck = shuffle(createDeck())
 
-function printUserHand() {
+printUserHand(shuffledDeck)
+
+function printUserHand(deck) {
   const humanCardContainer = document.querySelector('.human-cards-container')
-
+   
   // for elements in deck[]
-  
+    
+  for (let card of deck.slice(0, 3)) {
 
-  // pull three cards of the top of the deck
+    const humanCard = document.createElement('div')
+    
+    humanCard.classList.add('human-card')
+    
+    humanCard.textContent = card.value + ' ' + card.suit
+
+    humanCardContainer.appendChild(humanCard)
+  }    
+}
+  
+  // pull three cards off the top of the deck
 
 
   //* function to print 3 cards at the BOS for the user
-}
 
 function printComputerHand() {
   const computerCardContainer = document.querySelector('.computer-cards-container')
