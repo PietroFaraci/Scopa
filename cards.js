@@ -49,9 +49,37 @@ let mainDeck = createDeck();
 printCards(shuffle(mainDeck));
 
 function printUserHand() {
-  // function to print 3 cards at the BOS for the user
+  const humanCardContainer = document.querySelector('.human-cards-container')
+
+  // for elements in deck[]
+  
+
+  // pull three cards of the top of the deck
+
+
+  //* function to print 3 cards at the BOS for the user
 }
 
 function printComputerHand() {
-  // function to print 3 cards at TOS for the computer
+  const computerCardContainer = document.querySelector('.computer-cards-container')
+
+  // for elements in deck[]
+  
+
+  // pull three cards off the top of the deck
+  
+
+  //* function to print 3 cards at TOS for the computer
 }
+
+
+
+
+
+
+
+
+
+
+
+
