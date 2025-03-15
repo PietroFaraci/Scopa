@@ -1,6 +1,7 @@
 html, body {
   background-color: rgb(200, 200, 200);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -35,4 +36,9 @@ html, body {
 
 .clubs-card {
   background-color: grey;
+}
+
+.human-cards-container, .computer-cards-container {
+  display: flex;
+  gap: 10px;
 }

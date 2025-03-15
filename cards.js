@@ -45,52 +45,47 @@ function shuffle(deck) {
   return deck;
 }
 
-let shuffledDeck = shuffle(createDeck())
+let shuffledDeck = shuffle(createDeck());
 
-printUserHand(shuffledDeck)
+printUserHand(shuffledDeck);
+printComputerHand(shuffledDeck);
 
 function printUserHand(deck) {
-  const humanCardContainer = document.querySelector('.human-cards-container')
-   
-  // for elements in deck[]
-    
+  const humanCardContainer = document.querySelector(".human-cards-container");
+
   for (let card of deck.slice(0, 3)) {
+    const humanCard = document.createElement("div");
 
-    const humanCard = document.createElement('div')
-    
-    humanCard.classList.add('human-card')
-    
-    humanCard.textContent = card.value + ' ' + card.suit
+    if (card.suit == "swords") {
+      humanCard.classList.add("swords-card");
+    } else if (card.suit == "cups") {
+      humanCard.classList.add("cups-card");
+    } else if (card.suit == "coins") {
+      humanCard.classList.add("coins-card");
+    } else if (card.suit == "clubs") {
+      humanCard.classList.add("clubs-card");
+    }
 
-    humanCardContainer.appendChild(humanCard)
-  }    
+    humanCard.textContent = card.value + " " + card.suit;
+    humanCardContainer.appendChild(humanCard);
+  }
 }
-  
-  // pull three cards off the top of the deck
+function printComputerHand(deck) {
+  const computerCardContainer = document.querySelector(".computer-cards-container");
 
+  for (let card of deck.slice(0, 3)) {
+    const computerCard = document.createElement("div");
+    if (card.suit == "swords") {
+      computerCard.classList.add("swords-card");
+    } else if (card.suit == "cups") {
+      computerCard.classList.add("cups-card");
+    } else if (card.suit == "coins") {
+      computerCard.classList.add("coins-card");
+    } else if (card.suit == "clubs") {
+      computerCard.classList.add("clubs-card");
+    }
 
-  //* function to print 3 cards at the BOS for the user
-
-function printComputerHand() {
-  const computerCardContainer = document.querySelector('.computer-cards-container')
-
-  // for elements in deck[]
-  
-
-  // pull three cards off the top of the deck
-  
-
-  //* function to print 3 cards at TOS for the computer
+    computerCard.textContent = card.value + " " + card.suit;
+    computerCardContainer.appendChild(computerCard)
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
