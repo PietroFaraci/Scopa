@@ -53,7 +53,7 @@ printComputerHand(shuffledDeck);
 function printUserHand(deck) {
   const humanCardContainer = document.querySelector(".human-cards-container");
 
-  for (let card of deck.slice(0, 3)) {
+  for (let card of deck.splice(0, 3)) {
     const humanCard = document.createElement("div");
 
     if (card.suit == "swords") {
@@ -73,7 +73,7 @@ function printUserHand(deck) {
 function printComputerHand(deck) {
   const computerCardContainer = document.querySelector(".computer-cards-container");
 
-  for (let card of deck.slice(0, 3)) {
+  for (let card of deck.splice(0, 3)) {
     const computerCard = document.createElement("div");
     if (card.suit == "swords") {
       computerCard.classList.add("swords-card");
