@@ -12,25 +12,24 @@ function createDeck() {
   }
   return deck;
 }
-function printCards(deck) {
+function printGlobalCards(deck) {
   const container = document.querySelector(".card-container");
 
-  for (let singleCard of deck) {
-    const card = document.createElement("div");
+  for (let card of deck.splice(0, 4)) {
+    const globalCard = document.createElement("div");
 
-    if (singleCard.suit == "swords") {
-      card.classList.add("swords-card");
-    } else if (singleCard.suit == "cups") {
-      card.classList.add("cups-card");
-    } else if (singleCard.suit == "coins") {
-      card.classList.add("coins-card");
-    } else if (singleCard.suit == "clubs") {
-      card.classList.add("clubs-card");
+    if (card.suit == "swords") {
+      globalCard.classList.add("swords-card");
+    } else if (card.suit == "cups") {
+      globalCard.classList.add("cups-card");
+    } else if (card.suit == "coins") {
+      globalCard.classList.add("coins-card");
+    } else if (card.suit == "clubs") {
+      globalCard.classList.add("clubs-card");
     }
 
-    card.textContent = singleCard.value + " " + singleCard.suit;
-    console.log(singleCard);
-    container.appendChild(card);
+    globalCard.textContent = card.value + " " + card.suit;
+    container.appendChild(globalCard);
   }
 }
 function shuffle(deck) {
@@ -44,11 +43,6 @@ function shuffle(deck) {
   }
   return deck;
 }
-
-let shuffledDeck = shuffle(createDeck());
-
-printUserHand(shuffledDeck);
-printComputerHand(shuffledDeck);
 
 function printUserHand(deck) {
   const humanCardContainer = document.querySelector(".human-cards-container");
@@ -71,7 +65,9 @@ function printUserHand(deck) {
   }
 }
 function printComputerHand(deck) {
-  const computerCardContainer = document.querySelector(".computer-cards-container");
+  const computerCardContainer = document.querySelector(
+    ".computer-cards-container",
+  );
 
   for (let card of deck.splice(0, 3)) {
     const computerCard = document.createElement("div");
@@ -86,6 +82,14 @@ function printComputerHand(deck) {
     }
 
     computerCard.textContent = card.value + " " + card.suit;
-    computerCardContainer.appendChild(computerCard)
+    computerCardContainer.appendChild(computerCard);
   }
 }
+
+function setupGame(deck) {
+  printGlobalCards(deck);
+  printUserHand(deck);
+  printComputerHand(deck);
+}
+
+setupGame(shuffle(createDeck()));
