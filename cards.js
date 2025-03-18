@@ -93,3 +93,4 @@ function setupGame(deck) {
 }
 
 setupGame(shuffle(createDeck()));
+
