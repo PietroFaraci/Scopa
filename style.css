@@ -43,3 +43,20 @@ html, body {
   display: flex;
   gap: 10px;
 }
+.start-button-container {
+  outline: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-game, .start-game:after {
+  margin: 50px;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+.index-body {
+  display: flex;
+  justify-content: center;
+  
+}
