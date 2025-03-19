@@ -43,20 +43,30 @@ html, body {
   display: flex;
   gap: 10px;
 }
-.start-button-container {
-  outline: 1px solid black;
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.start-game, .start-game:after {
+.start-game, .start-game:after, .resume-game, .resume-game:after {
   margin: 50px;
+  padding: 20px;
   text-decoration: none;
   color: black;
   font-size: 24px;
+  outline: 1px solid black;
 }
 .index-body {
   display: flex;
   justify-content: center;
-  
+}
+.home-button, .home-button:after {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  outline: 1px solid black;
+  padding: 25px;
+  position: absolute;
+  left: 1%;
+  top: 1%;
 }
