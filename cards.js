@@ -1,7 +1,7 @@
 const SUITS = ["swords", "cups", "coins", "clubs"];
 const VALUES = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
-function createDeck() {
+export function createDeck() {
   let deck = [];
 
   for (let i = 0; i < SUITS.length; i++) {
@@ -12,7 +12,7 @@ function createDeck() {
   }
   return deck;
 }
-function printGlobalCards(deck) {
+export function printGlobalCards(deck) {
   const container = document.querySelector(".card-container");
 
   for (let card of deck.splice(0, 4)) {
@@ -32,7 +32,7 @@ function printGlobalCards(deck) {
     container.appendChild(globalCard);
   }
 }
-function shuffle(deck) {
+export function shuffle(deck) {
   for (let i = 0; i < 1000; i++) {
     let location1 = Math.floor(Math.random() * deck.length);
     let location2 = Math.floor(Math.random() * deck.length);
@@ -44,7 +44,7 @@ function shuffle(deck) {
   return deck;
 }
 
-function printUserHand(deck) {
+export function printUserHand(deck) {
   const humanCardContainer = document.querySelector(".human-cards-container");
 
   for (let card of deck.splice(0, 3)) {
@@ -64,7 +64,7 @@ function printUserHand(deck) {
     humanCardContainer.appendChild(humanCard);
   }
 }
-function printComputerHand(deck) {
+export function printComputerHand(deck) {
   const computerCardContainer = document.querySelector(
     ".computer-cards-container",
   );
@@ -86,11 +86,8 @@ function printComputerHand(deck) {
   }
 }
 
-function setupGame(deck) {
+export function setupGame(deck) {
   printGlobalCards(deck);
   printUserHand(deck);
   printComputerHand(deck);
 }
-
-setupGame(shuffle(createDeck()));
-
